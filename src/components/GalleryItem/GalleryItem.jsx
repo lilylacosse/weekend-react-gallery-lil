@@ -11,10 +11,13 @@ function GalleryItem({ listItem, getGallery }) {
         setToggle(!toggle)
     }
     // function to handle updating likes 
-    function updateLikes(id) {
-        console.log("In updateLikes");
+    function updateLikes(id, likes) {
+        console.log("In updateLikes, # of likes:", likes);
+        let numLikes = { likeCount: likes }
+        console.log("numLikes:", numLikes
+        );
         // call PUT
-        axios.put(`/gallery/like/${id}`)
+        axios.put(`/gallery/like/${id}`, numLikes)
             .then(response => getGallery())
             .catch((err) => {
                 console.log("Error with PUT:", err);
@@ -28,7 +31,7 @@ function GalleryItem({ listItem, getGallery }) {
                     <img src={listItem.path} width='100' height='100' onClick={handleToggle} /> :
                     <div onClick={handleToggle}>{listItem.description}</div>}
                 </div>
-                <button onClick={() => updateLikes(listItem.id)}>Like!</button>
+                <button onClick={() => updateLikes(listItem.id, listItem.likes)}>Like!</button>
                 <div>{listItem.likes}</div>
             </div>
         </>
