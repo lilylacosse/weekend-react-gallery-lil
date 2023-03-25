@@ -6,7 +6,7 @@ function GalleryList({ galleryList }) {
         <div>
             <h2>Lily's Photo Gallery</h2>
 
-            {/* {galleryList.map((listItem) => (
+            {galleryList.map((listItem) => (
                 < div key={listItem.id} >
                     <img src={listItem.path} width='100' height='100' />
                     <div>{listItem.description}</div>
@@ -16,7 +16,7 @@ function GalleryList({ galleryList }) {
             )
                 // <GalleryItem listItem={listItem} />
             )
-            } */}
+            }
 
         </div >
     )
