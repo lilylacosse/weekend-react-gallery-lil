@@ -2,15 +2,15 @@ import { useState } from "react";
 import axios from 'axios';
 
 function GalleryItem({ listItem, getGallery }) {
-    console.log(
-        "this is listItem:", listItem
-    );
+    // console.log("this is listItem:", listItem);
+    // state variable to handle toggling 
     const [toggle, setToggle] = useState(true);
+
     // function to handle toggling back and forth
     function handleToggle() {
         setToggle(!toggle)
     }
-
+    // function to handle updating likes 
     function updateLikes(id) {
         console.log("In updateLikes");
         // call PUT
@@ -19,9 +19,8 @@ function GalleryItem({ listItem, getGallery }) {
             .catch((err) => {
                 console.log("Error with PUT:", err);
             })
-
-
     }
+
     return (
         <>
             < div key={listItem.id} >

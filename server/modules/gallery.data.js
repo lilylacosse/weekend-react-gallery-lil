@@ -14,8 +14,7 @@ const galleryItems = [
   {
     id: 3,
     path: "images/newcar.JPG",
-    description:
-      "Bought a cute blue Subaru, because buying a used car was too expensive!",
+    description: "Bought a cute blue Subaru!",
     likes: 0,
   },
   {
